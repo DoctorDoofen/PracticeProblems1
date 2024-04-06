@@ -10,7 +10,15 @@
 */
 
 function characterCount(string) {
-  // Your code here 
+    let letterCount = {};
+    let char = string.split('');
+    for (let el of char) {
+        if (letterCount[el] === undefined) {
+            letterCount[el] = 1;
+        } else {
+            letterCount[el]
+        }
+    }
 }
 
 

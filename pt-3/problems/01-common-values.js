@@ -14,17 +14,25 @@
 */
 
 function commonValues(obj1, obj2) {
-    let value1 = Object.values(obj1);
-    let value2 = Object.values(obj2)
-    console.log()
-    let same = [];
 
-    for (let val1 of value1) {
-        for (let val2 of value2) {
-            if (val1 === val2) same.push(val1)
-        }
+    let value2 = Object.values(obj2)
+    let same = [];
+    let keys = {};
+
+    for (let el in obj1) {
+
+        keys[obj1[el]] = undefined
+    }
+    for (let val of value2) {
+        if (val in keys) same.push(val);
     }
     return same;
+    // for (let val1 of value1) {
+    //     for (let val2 of value2) {
+    //         if (val1 === val2) same.push(val1)
+    //     }
+    // }
+    // return same;
 }
 const cat = { color: 'white', legs: 4, favoriteFood: 'sushi' };
 const bunny = { color: 'white', favoriteFood: 'carrots' };
